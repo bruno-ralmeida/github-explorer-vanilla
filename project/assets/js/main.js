@@ -1,17 +1,19 @@
 import { getUser, getRepo } from "./service";
 import { updateData } from "./utils";
 
-const search = document.querySelector("#iSearch");
+const search = document.querySelector("#btnSearch");
 
-search.addEventListener("keyup", (e) => {
+search.addEventListener("click", () => {
+
   try {
-    const find = e.target.value;
+    const find = document.querySelector("#iSearch").value;
 
     (async () => {
       const user = await getUser(find);
       const repo = await getRepo(find);
       updateData(user, repo);
     })();
+    
   } catch (error) {
     console.log(error);
   }

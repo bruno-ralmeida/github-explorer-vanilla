@@ -25,7 +25,17 @@ export const updateData = (userResp, repo) => {
 export const listRepositories = (repo) => {
   let searchResult = document.querySelector(".search_result");
 
+  
+  // const {id, name, full_name} = repo[0];
+
+  // searchResult.innerHTML = `  
+  //                           <h2> ${id} </h2>
+  //                           <h2> ${name} </h2>
+  //                           <h2> ${full_name} </h2>
+  
+  //                           `
   console.log('====================================');
   console.log(repo);
+  console.log(typeof(repo));
   console.log('====================================');
 };
