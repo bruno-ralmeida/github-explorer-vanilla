@@ -25,14 +25,24 @@ export const listRepositories = (repo) => {
   let searchResult = document.querySelector(".search_result__repo");
 
   repo.map((e) => {
-    const { name, full_name, language } = e;
+    const { name, full_name, language, git_url , clone_url , created_at ,description} = e;
     searchResult.innerHTML += `  
-                              <h2> ${language} </h2>
-                              <h2> ${name} </h2>
-                              <h2> ${full_name} </h2>
-    
+                              <div class="repo">
+                              <h3>${name}</h3>
+                              <p>
+                                ${full_name}
+                                ${description}
+                              </p>
+                              <div class="repo__details">
+                                <code>${clone_url}</code>
+                                <span id="repo__language">${language}</span>
+                                <p>${created_at}</p>
+                                <a href="${git_url}" class="link" style="color: black">Abrir no github</a>
+                              </div>
+                            </div>
                               `;
   });
 
   console.log(repo);
 };
+

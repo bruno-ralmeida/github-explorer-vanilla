@@ -8,7 +8,7 @@
   --gray-darker: #111;
   --gray-light: #f1f1f1;
   --gray-lighter: #fafafa;
-  --border-gray: #cecccc;
+  --border-gray: #44434300;
   --steel-wool: #797c7e;
   --white: #fff;
   --black: #000;
@@ -113,6 +113,7 @@ main {
   height: 100%;
   min-height: 90vh;
   padding: 0 1.25em;
+  background: linear-gradient(180deg, #616161, #E0E0E0 , #EDEDED);
 }
 
 /*Sessão de busca*/
@@ -167,16 +168,19 @@ main {
   padding: auto;
   border-left: solid var(--border-gray) 1px;
   width: 100%;
+  padding: 0 .5em;
 }
 
 .repo {
   margin: 1em auto;
-  border: solid var(--gray-darker) 1px;
-  width: calc(100% / 3);
+  
+  border-radius: .5em;
+  width: 100%;
+  max-width: 250px;
   display: flex;
   flex-direction: column;
   padding: 1.5em;
-  background: #f1f1f1;
+  background: linear-gradient(190deg, #a1a0a0, #E0E0E0 , #EDEDED);
   text-align: center;
   font-size: 16px;
   flex-wrap: wrap;
@@ -188,6 +192,7 @@ main {
   margin: .5em auto;
 }
 .repo__details{
+  
   margin: .5em 0;
   display: flex;
   flex-wrap: wrap;
@@ -208,7 +213,6 @@ main {
 
 .repo__details  a {
   flex-basis: 100%;
-  color: var(--gray-darker);
   font-size: 1em;
   
 }
