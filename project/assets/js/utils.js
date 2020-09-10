@@ -17,25 +17,22 @@ export const updateData = (userResp, repo) => {
                                             ${userResp.location}`;
   email.innerHTML = `<img src="https://img.icons8.com/material-rounded/20/000000/filled-sent.png"/>
                         ${userResp.blog}`;
-  
-  listRepositories(repo);
 
+  listRepositories(repo);
 };
 
 export const listRepositories = (repo) => {
-  let searchResult = document.querySelector(".search_result");
+  let searchResult = document.querySelector(".search_result__repo");
 
-  
-  // const {id, name, full_name} = repo[0];
+  repo.map((e) => {
+    const { name, full_name, language } = e;
+    searchResult.innerHTML += `  
+                              <h2> ${language} </h2>
+                              <h2> ${name} </h2>
+                              <h2> ${full_name} </h2>
+    
+                              `;
+  });
 
-  // searchResult.innerHTML = `  
-  //                           <h2> ${id} </h2>
-  //                           <h2> ${name} </h2>
-  //                           <h2> ${full_name} </h2>
-  
-  //                           `
-  console.log('====================================');
   console.log(repo);
-  console.log(typeof(repo));
-  console.log('====================================');
 };
